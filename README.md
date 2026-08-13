@@ -1,24 +1,21 @@
 # 🛡️ Windows Security Monitor
 
-A Python-based Windows Security Monitoring System designed to monitor system resources, running processes, network connections, and listening ports.
+> A lightweight Python-based Windows security monitoring application for monitoring system resources, processes, network connections, and listening ports.
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)
+![GUI](https://img.shields.io/badge/GUI-Tkinter-green)
+![License](https://img.shields.io/badge/License-Educational-orange)
 
 ---
 
 ## 📌 Overview
 
-Windows Security Monitor is a lightweight security monitoring application developed using Python.
+**Windows Security Monitor** is a lightweight security monitoring system developed using Python.
 
-The project collects information from a Windows computer and presents useful system and security information through a simple dashboard.
+The application collects basic system and security-related information from a Windows computer and presents it through an easy-to-use graphical dashboard.
 
-It can help users monitor:
-
-- CPU usage
-- Memory usage
-- Running processes
-- Network connections
-- Listening ports
-- System activity
-- Basic security-related information
+It is designed as an **educational cybersecurity project** to demonstrate how system monitoring and basic security detection can be implemented using Python.
 
 ---
 
@@ -28,73 +25,46 @@ It can help users monitor:
 
 - Monitor CPU usage
 - Monitor RAM usage
-- Monitor system resource utilization
+- Display system resource utilization
+- Monitor basic system activity
 
 ### ⚙️ Process Monitoring
 
 - View currently running processes
 - Display process information
 - Monitor process activity
+- Identify resource-intensive processes
 
 ### 🌐 Network Monitoring
 
 - View active network connections
-- Display connection information
-- Identify network activity
+- Display network connection information
+- Monitor network activity
+- Identify local and remote endpoints
 
 ### 🔌 Port Monitoring
 
 - Detect listening ports
 - Display port information
-- Help identify services listening on the system
+- Identify services listening on the system
+- Detect newly observed listening services
 
 ### 🛡️ Security Monitoring
 
 - Perform basic security checks
-- Monitor potentially suspicious system activity
 - Generate security alerts
-- Threat score assessment
-- Detect new listening services
-- Monitor high CPU and RAM usage
+- Calculate a basic threat score
+- Detect suspicious system activity
+- Monitor unusually high CPU/RAM usage
+- Track changes in listening services
 
 ### 📊 Dashboard
 
-- Simple Python-based graphical interface
-- Easy-to-understand monitoring information
+- Simple graphical user interface
+- Real-time monitoring information
 - Security event history
-- Threat level display
+- Threat-level display
 - Network and port information
-
----
-
-## 🛠️ Technologies Used
-
-- **Python 3**
-- **Tkinter** – Graphical User Interface
-- **Psutil** – System and process monitoring
-- **SQLite** – Local database
-- **JSON** – Baseline configuration
-- **CSV** – Security event export
-- **Windows OS**
-
----
-
-## 📂 Project Structure
-
-```text
-Windows-Security-Monitor/
-│
-├── dashboard.py
-├── database.py
-├── monitor.py
-├── security.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-│
-└── screenshots/
-    └── dashboard.png
-```
 
 ---
 
@@ -104,7 +74,40 @@ Windows-Security-Monitor/
 
 ---
 
-## ⚙️ Installation
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| **Python 3** | Core programming language |
+| **Tkinter** | Graphical user interface |
+| **Psutil** | System, process and network monitoring |
+| **SQLite** | Local event database |
+| **JSON** | Baseline configuration |
+| **CSV** | Security event export |
+| **Windows OS** | Target operating system |
+
+---
+
+## 📂 Project Structure
+
+```text
+Windows-Security-Monitor/
+│
+├── dashboard.py          # Graphical dashboard
+├── database.py           # SQLite database operations
+├── monitor.py            # System/process/network monitoring
+├── security.py           # Security checks and threat assessment
+├── requirements.txt      # Python dependencies
+├── README.md             # Project documentation
+├── .gitignore            # Git ignored files
+│
+└── screenshots/
+    └── dashboard.png     # Dashboard screenshot
+```
+
+---
+
+## 🚀 Installation
 
 ### 1. Clone the Repository
 
@@ -121,130 +124,137 @@ cd Windows-Security-Monitor
 ### 3. Install Dependencies
 
 ```bash
-python -m pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ Running the Project
+## ▶️ How to Run
 
-Start the dashboard using:
+Run the dashboard using:
 
 ```bash
 python dashboard.py
 ```
 
-The Windows Security Monitor dashboard will open and display system and security information.
-
----
-
-## 📋 Requirements
-
-- Windows 10 or Windows 11
-- Python 3.x
-- pip
-- Required packages listed in `requirements.txt`
+The graphical security monitoring dashboard will open.
 
 ---
 
 ## 🔍 How It Works
 
-The application uses Python and `psutil` to collect information from the Windows system.
+The application follows a simple monitoring workflow:
 
-### System Monitoring
-
-The application monitors CPU and RAM usage and checks configured resource thresholds.
-
-### Process Monitoring
-
-The application retrieves currently running processes and displays their basic information.
-
-### Network Monitoring
-
-The application checks active network connections and displays local and remote connection information.
-
-### Port Monitoring
-
-The application detects listening ports and attempts to identify the process associated with each listening service.
-
-### Baseline Monitoring
-
-The security system maintains a baseline of known listening ports and can detect newly appearing listening services.
-
-### Threat Assessment
-
-Detected security events contribute to a threat score and threat level.
-
-Possible threat levels include:
-
-- 🟢 LOW
-- 🟡 MEDIUM
-- 🟠 HIGH
-- 🔴 CRITICAL
+```text
+Windows System
+      │
+      ▼
+   Psutil
+      │
+      ├── CPU / RAM
+      │
+      ├── Running Processes
+      │
+      ├── Network Connections
+      │
+      └── Listening Ports
+      │
+      ▼
+ Security Analysis
+      │
+      ├── Security Checks
+      ├── Threat Assessment
+      └── Alert Generation
+      │
+      ▼
+ SQLite Database
+      │
+      ▼
+ Tkinter Dashboard
+```
 
 ---
 
-## 🛡️ Security Purpose
+## 🛡️ Security Monitoring
 
-This project is intended for **educational and defensive cybersecurity purposes**.
+The security module performs basic checks on monitored system activity.
 
-It should only be used on computers and networks that you own or have permission to monitor.
+Examples include:
 
-This project is **not a replacement for professional antivirus, EDR, or endpoint security software**.
+- High CPU usage
+- High memory usage
+- New listening services
+- Potentially unusual system activity
+- Changes from the configured baseline
 
----
+The application can assign a basic **threat score** based on detected security events.
 
-## 🎯 Learning Objectives
-
-This project demonstrates practical concepts including:
-
-- Python programming
-- Windows system monitoring
-- Process management
-- Network monitoring
-- Port monitoring
-- Security event detection
-- Threat scoring
-- SQLite database integration
-- Tkinter GUI development
-- Basic cybersecurity concepts
-- Git and GitHub
+> **Note:** This project is a basic monitoring system and should not be considered a replacement for professional antivirus, EDR, SIEM, or enterprise security solutions.
 
 ---
 
-## 🚀 Future Improvements
+## 📊 Data Storage
+
+Security events can be stored locally using **SQLite**.
+
+The project can also use:
+
+- **JSON** for baseline configuration
+- **CSV** for exporting security events
+
+This allows monitoring data to remain available for later analysis.
+
+---
+
+## 🎯 Project Objectives
+
+The main objectives of this project are:
+
+- Understand Windows system monitoring
+- Learn Python-based cybersecurity development
+- Monitor processes and system resources
+- Understand network connections and listening ports
+- Implement basic security detection
+- Store security events locally
+- Build a simple security dashboard
+
+---
+
+## 🔮 Future Improvements
 
 Possible future improvements include:
 
-- Windows Event Log integration
-- Advanced suspicious-process detection
-- IP reputation analysis
-- Email and desktop notifications
-- Advanced network analysis
-- Detailed security reports
-- Improved dashboard visualizations
-- User authentication
-- Automated security reports
+- 🔔 Real-time desktop notifications
+- 📧 Email security alerts
+- 📈 Historical CPU/RAM graphs
+- 🔎 Advanced process analysis
+- 🌐 IP reputation checking
+- 🦠 Malware detection integration
+- 📋 Detailed security event logs
+- 🔐 User authentication
+- 📊 Advanced threat analytics
+- 🖥️ Improved dashboard UI
+
+---
+
+## ⚠️ Disclaimer
+
+This project is developed for **educational and cybersecurity learning purposes**.
+
+It is intended to monitor systems where the user has appropriate authorization.
+
+The project should not be used to monitor or inspect systems without permission.
 
 ---
 
 ## 👨‍💻 Author
 
-**Ashu**
+**Kanishk Soni**
 
-GitHub:  
-https://github.com/kanishk-2010-tech
-
----
-
-## 📄 License
-
-This project is intended for educational purposes.
+Cybersecurity Student & Developer
 
 ---
 
-⭐ If you find this project useful, consider giving the repository a star.
+## ⭐ Support
 
----
-
-**Windows Security Monitor — Python-based Windows security monitoring for learning and defensive analysis.**
+If you find this project useful for learning cybersecurity or Python system monitoring, consider giving the repository a ⭐.
