@@ -25,34 +25,45 @@ It can help users monitor:
 ## ✨ Features
 
 ### 🖥️ System Monitoring
+
 - Monitor CPU usage
 - Monitor RAM usage
 - Monitor system resource utilization
 
 ### ⚙️ Process Monitoring
+
 - View currently running processes
 - Display process information
 - Monitor process activity
 
 ### 🌐 Network Monitoring
+
 - View active network connections
 - Display connection information
 - Identify network activity
 
 ### 🔌 Port Monitoring
+
 - Detect listening ports
 - Display port information
 - Help identify services listening on the system
 
 ### 🛡️ Security Monitoring
+
 - Perform basic security checks
 - Monitor potentially suspicious system activity
-- Provide useful information for defensive security analysis
+- Generate security alerts
+- Threat score assessment
+- Detect new listening services
+- Monitor high CPU and RAM usage
 
 ### 📊 Dashboard
+
 - Simple Python-based graphical interface
 - Easy-to-understand monitoring information
-- Designed for learning and security analysis
+- Security event history
+- Threat level display
+- Network and port information
 
 ---
 
@@ -62,6 +73,8 @@ It can help users monitor:
 - **Tkinter** – Graphical User Interface
 - **Psutil** – System and process monitoring
 - **SQLite** – Local database
+- **JSON** – Baseline configuration
+- **CSV** – Security event export
 - **Windows OS**
 
 ---
